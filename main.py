@@ -1,11 +1,21 @@
-from pyscript import document
+from pyscript import when, display, document
 
-def generate_message(event):
-    name = document.getElementById("name").value
-    age = document.getElementById("age").value
-    school = document.getElementById("school").value
+@when("click", "#make-card")
+def create_card(event):
+    nickname = document.querySelector("#nickname").value
+    hobby = document.querySelector("#hobby").value
+    dream = document.querySelector("#dream").value
 
-    document.getElementById("output").innerText = ""
+    document.querySelector("#output").innerText = ""
 
-    message = f"""Student Profile:\nName: \"{name}\"\nAge:\t{age}\nSchool: {school}\nWelcome to your profile showcase!"""
-    document.getElementById("output").innerText = message
+    card = f"""
+    Personal Info 
+    Nickname: {nickname}
+    Hobby: {hobby}
+    Dream Job: {dream}
+
+    In Sentence:
+    {nickname} loves spending their free time with {hobby}, and hopes to work someday as a/an {dream}.
+    """
+
+    display(card, target="output")
