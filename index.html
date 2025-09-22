@@ -1,72 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String Showcase: My Basic Info</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     <style>
-        body{
+        body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 40px;
-            max-width: 500px;
-            margin: auto;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background: #f2f8fd;
         }
-        h2{
-            text-align: center;
+        input, button {
+            margin-top: 10px;
+            padding: 8px;
+            display: block;
         }
-        input{
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-        button{
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        #output{
+        #output {
             margin-top: 20px;
-            white-space: pre-line;
-            border: 1px solid #ccc;
+            white-space: pre-wrap;
+            background: #dbe7ff;
             padding: 15px;
             border-radius: 5px;
-            background-color: #f3f3f3;
         }
     </style>
 </head>
 <body>
-    <h2>String Showcase: My Basic Info</h2>
+    <h1>My Basic Info</h1>
 
-    <p>Name</p>
-    <input type="text" id="name">
+    <label for="nickname">Nickname:</label>
+    <input id="nickname" type="text" />
 
-    <p>Age</p>
-    <input type="text" id="age">
+    <label for="hobby">Favorite Hobby:</label>
+    <input id="hobby" type="text" />
 
-    <p>School</p>
-    <input type="text" id="school">
+    <label for="dream">Dream Job:</label>
+    <input id="dream" type="text" />
 
-    <button py-click="generate_message">Generate Message</button>
+    <button id="make-card">Create Card</button>
 
     <div id="output"></div>
 
     <py-config>
-    [[fetch]]
-    files = ["main.py"]
+        [[fetch]]
+        files = ["main.py"]
     </py-config>
-    <script type="py" src="main.py"></script>
+
+    <script type="py" src="./main.py"></script>
 </body>
 </html>
